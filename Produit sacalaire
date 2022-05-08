@@ -1,0 +1,55 @@
+PROCEDURE dot_product(ps:FLOAT,n:INTEGER,VAR V1,V2: ARRAY_OF FLOAT[n])
+VAR
+    i: INTEGER;
+    
+BEGIN
+ps = 0;
+FOR i FROM 0 TO n-1 DO
+    ps:= ps + V1[i]*V2[i]
+END
+ALGORITHM scalar_vector
+VAR
+    i,j,n:INTEGER;
+BEGIN
+    Write("give the length of V1 and V2");
+    Read(n);
+    dot_product()
+    FOR i FROM 0 TO n-1 STEP 1 DO
+    FOR j FROM i+1 TO n-1 DO
+        IF (dot_product(V1,V2) = 0) THEN
+            Write("The two vectors are orthogonal")
+        ELSE
+            Write("The two vectors are not orthogonal")
+        END_IF
+    END_FOR
+    END_FOR
+
+END
+
+FUNCTION dot_product(V1,V2:ARRAY_OF FLOAT(n)) : FLOAT
+VAR
+ ps:FLOAT
+ i,n:INTEGER   
+BEGIN
+    ps = 0;
+    FOR i FROM 0 TO V1.length-1 DO
+    ps:= ps + V1[i]*V2[i]
+    RETURN ps ;
+END
+
+ALGORITHM scalar_vector
+VAR
+    i,j,n:INTEGER;
+BEGIN
+    Write("give the length of V1 and V2");
+    Read(n);
+    ps:= dot_product(V1,V2)
+        IF (dot_product(V1,V2) = 0) THEN
+            Write("The two vectors are orthogonal")
+        ELSE
+            Write("The two vectors are not orthogonal")
+        END_IF
+    END_FOR
+    END_FOR
+
+END
